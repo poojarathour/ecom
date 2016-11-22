@@ -1,0 +1,20 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if product.published_date %}
+            <div class="date">
+                {{ product.published_date }}
+            </div>
+        {% endif %}
+
+        <h1>{{ product.title }}</h1>
+        {% if product.picture %}
+        <img src="{{product.picture.url}}" alt="{{product.title}}" height="200" width="200" border="1"/>
+
+        {% endif %}
+        <p>{{ product.text|linebreaksbr }}</p>
+        <p>{{ product.price|linebreaksbr }}</p>
+        <p>{{ product.quality|linebreaksbr }}</p>
+    </div>
+{% endblock %}
